@@ -1,7 +1,7 @@
-from Exceptions import DataLoadException
-from sqlalchemy import create_engine
 import pandas as pd
+from sqlalchemy import create_engine
 
+from src.Exceptions import DataLoadException
 
 
 class DataHandler:
@@ -12,7 +12,8 @@ class DataHandler:
         try:
             return pd.read_csv(file_path)
         except FileNotFoundError:
-            raise DataLoadException(f"File not avaialable: {file_path} , please provide proper path!")
+            raise DataLoadException(
+                f"File not avaialable: {file_path} , please provide proper path!")
 
     def save_to_db(self, df, table_name):
         df.to_sql(table_name, self.engine, if_exists='replace', index=False)

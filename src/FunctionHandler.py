@@ -1,11 +1,9 @@
-from Exceptions import DataLoadException
+from src.DataHandler import DataHandler
 
 
 class IdealFunctionsHandler(DataHandler):
-    """Handles loading and selecting the ideal functions."""
-
-    def _init_(self, db_name='data_analysis.db'):
-        super()._init_(db_name)
+    def _init_(self):
+        super().__init__()
         self.table_name = 'ideal_functions'
 
     def select_best_fit_functions(self, training_df, ideal_df):
