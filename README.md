@@ -33,6 +33,7 @@ This project involves data analysis and visualization using Python. The main com
    ```
 
 2. The results will be saved in an HTML file named `data_visualization.html`.
+   ![alt text](image.png)
 
 ## Project Components
 
